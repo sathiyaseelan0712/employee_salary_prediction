@@ -1,0 +1,25 @@
+### Short Notes on Salary Prediction Model
+
+1. **Objective**: The goal of this project is to build a salary prediction model based on features such as **Age**, **Years of Experience**, **Education Level**, and **Gender** using the **Random Forest Regressor**.
+
+2. **Data Preprocessing**:
+   - **Missing Values**: Replaced common missing value indicators (`'NA'`, `'NaN'`) with `NaN` and dropped rows with missing data.
+   - **Outliers**: Filtered out low salaries (below 10,000) and rows with missing critical features.
+   - **Feature Selection**: Kept only relevant features: `Age`, `Years of Experience`, `Gender`, `Education Level`, and `Salary`.
+   - **One-Hot Encoding**: Categorical features (`Gender`, `Education Level`) were encoded into numeric values using **One-Hot Encoding**.
+
+3. **Model Training**:
+   - The data was split into training and test sets (67% training, 33% testing).
+   - **StandardScaler** was used to scale the features for better performance with the Random Forest model.
+   - A **Random Forest Regressor** model was trained to predict salary based on the preprocessed features.
+
+4. **Saving the Model**:
+   - The trained model, scaler, and encoder were saved using `joblib` for later use in deployment.
+   - Also saved the expected feature order for consistency during predictions.
+
+5. **Deployment (Flask API)**:
+   - A Flask API was set up to load the trained model and preprocess incoming requests for salary predictions.
+   - The API accepts input data in JSON format, processes it, and returns the predicted salary.
+
+### Conclusion:
+The project successfully builds and deploys a **salary prediction model** using a **Random Forest Regressor**, which can predict salaries based on input features. The model is deployed via a Flask API for easy use in production environments.
