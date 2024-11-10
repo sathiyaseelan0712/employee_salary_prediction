@@ -78,17 +78,17 @@ const About = () => {
           </h2>
           <pre className="bg-white text-black p-4 rounded-md font-mono text-sm">
             <code>
-              Flask==2.1.0
+              Flask==3.0.3
               <br />
               scikit-learn==1.5.2
               <br />
-              joblib==1.1.0
+              joblib==1.4.2
               <br />
-              numpy==1.21.2
+              numpy==1.25.0
               <br />
-              pandas==1.3.3
+              matplotlib==3.9.2
               <br />
-              Flask-Cors==3.1.1
+              Flask-Cors==4.0.1
               <br />
             </code>
           </pre>

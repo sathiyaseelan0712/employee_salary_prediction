@@ -14,7 +14,7 @@ const SalaryPrediction = () => {
   const [error, setError] = useState(null);
   const [isPopupVisible, setIsPopupVisible] = useState(false);
 
-  const API_URL = "http://127.0.0.1:5000/predict";
+  const API_URL = "https://employee-salary-prediction-backend.onrender.com/predict";
 
   const quotes = [
     "The harder you work for something, the greater you'll feel when you achieve it.",

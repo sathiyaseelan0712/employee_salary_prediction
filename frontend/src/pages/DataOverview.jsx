@@ -5,7 +5,7 @@ const DataOverview = () => {
 
   // Fetch Data from Backend
   useEffect(() => {
-    fetch("http://127.0.0.1:5000/data")
+    fetch("https://employee-salary-prediction-backend.onrender.com/data")
       .then((response) => response.json())
       .then((data) => {
         const parsedData = JSON.parse(data);

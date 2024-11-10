@@ -8,7 +8,7 @@ const Correlation = () => {
   const [plotUrl, setPlotUrl] = useState("");
 
   useEffect(() => {
-    fetch("http://127.0.0.1:5000/api/get-columns")
+    fetch("https://employee-salary-prediction-backend.onrender.com/api/get-columns")
       .then((response) => response.json())
       .then((data) => {
         setColumns(data.columns);
@@ -23,7 +23,7 @@ const Correlation = () => {
       column2: selectedColumn2,
     };
 
-    fetch("http://127.0.0.1:5000/api/generate-plot", {
+    fetch("https://employee-salary-prediction-backend.onrender.com/api/generate-plot", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
