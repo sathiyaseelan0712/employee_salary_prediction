@@ -8,8 +8,8 @@ import seaborn as sns
 
 app = Flask(__name__)
 CORS(app)
+
 model = joblib.load('models/salary_predictor_rf.pkl')
-scaler = joblib.load('models/scaler.pkl')
 encoder = joblib.load('models/encoder.pkl')
 expected_features = joblib.load('models/expected_features.pkl')
 data = pd.read_csv('salary_data.csv')
@@ -18,7 +18,6 @@ data = pd.read_csv('salary_data.csv')
 @app.route('/predict', methods=['POST'])
 def predict_salary():
     data = request.get_json()
-    print(data)
     age = data.get('Age')
     experience = data.get('Years of Experience')
     education = data.get('Education Level')
@@ -32,11 +31,11 @@ def predict_salary():
         'Gender_Male': 1 if gender == "Male" else 0
     }
 
+    # Create DataFrame for prediction
     features_df = pd.DataFrame([features_dict], columns=expected_features)
 
-    features_scaled = scaler.transform(features_df)
-
-    predicted_salary = model.predict(features_scaled)[0]
+    # Predict salary
+    predicted_salary = model.predict(features_df)[0]
 
     return jsonify({
         'age': age,

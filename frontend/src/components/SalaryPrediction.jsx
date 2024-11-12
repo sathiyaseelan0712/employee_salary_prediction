@@ -179,7 +179,7 @@ const SalaryPrediction = () => {
           onClose={() => setIsPopupVisible(false)}
         >
           <p className="text-[#0e0904] text-center font-bold font-mono text-sm sm:text-base">
-            <strong>Predicted Salary: </strong>${predictedSalary?.toFixed(2)}
+            <strong>Predicted Salary: </strong><bold>₹{predictedSalary?.toFixed(2)}</bold>
           </p>
           <p className="text-[#000000] text-center font-mono font-bold text-sm sm:text-base mt-2">
             {getRandomQuote()}
